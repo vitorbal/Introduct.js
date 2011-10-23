@@ -1,0 +1,12 @@
+1.  Take border radius in consideration when calculating the boundaries of 
+    the overlay boxes (is this even possible with this overlay approach?)
+
+2.  What if target is document or window object? (current code will break)
+
+3.  Option to add arbitrary padding to target area
+
+4.  Think of new name for plugin (?)
+
+5.  Add shadow effect on target for pure awesomeness
+
+6.  Apply decent pattern to code to hide private stuff

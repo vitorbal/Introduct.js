@@ -1,0 +1,56 @@
+.introduct-demo {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 1.25em;
+  background: #f4fafe;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4fafe), color-stop(100%, #ccf0f0));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
+  /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
+  /* IE10+ */
+  background: linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
+  /* W3C */
+  background-attachment: fixed;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.introduct-demo h1, .introduct-demo h2, .introduct-demo h3, .introduct-demo h4, .introduct-demo h5, .introduct-demo h6 {
+  font-family: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+.introduct-demo h1 {
+  color: #08455f;
+}
+.introduct-demo h2 {
+  color: #0b7495;
+  border-bottom: 0;
+}
+.introduct-demo form {
+  width: 300px;
+  background: #fff;
+  border: 3px solid #cde;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  margin: 20px;
+  padding: 10px;
+}
+.introduct-demo form > input {
+  float: right;
+}
+#step5 {
+  height: 400px;
+  width: 320px;
+}
+#sidebar {
+  float: left;
+}
+#kitty-control {
+  float: right;
+}
