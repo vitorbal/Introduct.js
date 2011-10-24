@@ -1,12 +1,23 @@
-1.  Take border radius in consideration when calculating the boundaries of 
-    the overlay boxes (is this even possible with this overlay approach?)
+  . Option to add arbitrary padding to target area
 
-2.  What if target is document or window object? (current code will break)
+  . Think of new name for plugin (?) (introductify??)
 
-3.  Option to add arbitrary padding to target area
+  . Try new approach idea (absolute position target, create placeholder with
+    same size)
 
-4.  Think of new name for plugin (?)
+  . Check compatibility of border-radius and box-shadow on older versions of
+    safari, opera, firefox and chrome. If there is problems, may need to
+    add '-moz-border-radius-bottomright' and '-webkit-border-top-left-radius'
+    to our getCss function
 
-5.  Add shadow effect on target for pure awesomeness
+  . Pimping awesomeness with 'animated effect': box-shadow growing bigger
 
-6.  Apply decent pattern to code to hide private stuff
+  . What if overlay shouldnt be whole page? 
+
+  . resizeOverlay function is not good enough
+
+  . Treat elements with collapsed margin
+
+  . "Simulate" button shape when target is a button
+
+  . Test, test, test...
