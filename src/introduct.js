@@ -5,7 +5,8 @@
     overlayTarget: document,
     color: 'white',
     opacity: 0.5,
-    zIndex: 9998
+    zIndex: 9998,
+    addShadow: false
   },
 
   // The overlay object is static between all calls to the plugin
@@ -13,6 +14,10 @@
 
   obj = {
     init: function( options ) {
+
+      if ( ! this.length  || this.hasClass( 'introduct-target' )) {
+        return this;
+      }
 
       // Extending plugin settings with user options without overriding
       // the original settings object
@@ -22,54 +27,39 @@
       if ( !overlay ) {
         overlay = $('<div/>')
           .css({
-            width: $(o.overlayTarget).width(),
-            height: $(o.overlayTarget).height(),
+            zIndex: o.zIndex,
             opacity: o.opacity,
-            backgroundColor: o.color,
             position: 'absolute',
             top: 0,
             left: 0,
-            zIndex: o.zIndex
+            width: $(o.overlayTarget).width(),
+            height: $(o.overlayTarget).height(),
+            backgroundColor: o.color
           })
           .addClass( 'introduct-overlay' )
           .appendTo( 'body' );
 
         // Attach handler to resize event so we can recalculate position and
         // size of the overlay box when the size of the browser window changes
-        $(window).resize(function() {
-          _resizeOverlay( o.overlayTarget );
-        });
+        // FIXME: doesnt work right...
+        //$(window).resize(function() {
+        //  _resizeOverlay( o.overlayTarget );
+        //});
       }
 
       return this.each(function() {
         
-        // Plugin code here
-        var target = $(this),
-            placeholder = $('<' + target[0].tagName + '/>'),
-            posTop = target.position().top,
-            posLeft = target.position().left;
+        var target = $(this);
 
-        placeholder.css( _cloneShape( target ))
-          .css({
-            width: target.outerWidth(),
-            height: target.outerHeight(),
-            backgroundColor: 'black'
+          target.css({
+            zIndex: 9999,
+            opacity: 1,
+            position: 'relative'
           })
-          .attr( 'id', 'introduct-placeholder-' + target.attr( 'id' ))
-          .insertAfter( target );
-
-        target.css({
-          position: 'absolute',
-          top: posTop,
-          left: posLeft,
-          zIndex: 9999,
-          opacity: 1
-        })
-        .addClass('introduct-shadow')
-        .animate({
-          top: '-=7',
-          left: '-=7',
-        }, 480);
+          .addClass( 'introduct-target' );
+          if ( o.addShadow ) {
+            target.addClass( 'introduct-box-shadow' );
+          }
 
       });
     },
@@ -91,6 +81,7 @@
 
   // Recalculate size of the overlay box
   _resizeOverlay = function( overlayTarget ) {
+
     if (overlay) {
       var $overlayTarget = $(overlayTarget),
           overlayWidth = $overlayTarget.width() > $(window).width() ?
@@ -101,29 +92,10 @@
       overlay.width( overlayWidth );
       overlay.height( overlayHeight );
     }
-  },
-
-  // Get all css properties of the element that could influence it's shape.
-  // This method is used by the placeholder element to imitate the shape of
-  // it's target element
-  _cloneShape = function( target ) {
-      var attr = [
-        'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
-        'display', 'float', 'clear', 'border-top-left-radius',
-        'border-top-right-radius', 'border-bottom-left-radius',
-        'border-bottom-right-radius'],
-        len = attr.length, obj = {};
-      for (var i = 0; i < len; i++) {
-        var targetCss = target.css(attr[i]);
-        if (targetCss && targetCss !== 'none') {
-          obj[attr[i]] = targetCss;
-        }
-      }
-      return obj;
 
   };
 
-  
+
   $.fn.introduct = function( method ) {
 
     // Method calling logic

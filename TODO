@@ -1,9 +1,4 @@
-  . Option to add arbitrary padding to target area
-
   . Think of new name for plugin (?) (introductify??)
-
-  . Try new approach idea (absolute position target, create placeholder with
-    same size)
 
   . Check compatibility of border-radius and box-shadow on older versions of
     safari, opera, firefox and chrome. If there is problems, may need to

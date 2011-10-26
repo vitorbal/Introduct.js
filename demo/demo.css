@@ -28,6 +28,9 @@
   color: #0b7495;
   border-bottom: 0;
 }
+#step1 {
+  padding: 1px 0;
+}
 #step2 {
   width: 300px;
   background: #fff;
@@ -50,4 +53,9 @@
 }
 #kitty-control {
   float: right;
+}
+.introduct-box-shadow {
+  -webkit-box-shadow: 6px 6px 6px rgba(0,0,0,0.4); 
+     -moz-box-shadow: 6px 6px 6px rgba(0,0,0,0.4); 
+          box-shadow: 6px 6px 6px rgba(0,0,0,0.4); 
 }
