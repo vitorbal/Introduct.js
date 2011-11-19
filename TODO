@@ -1,18 +1,15 @@
-  . Think of new name for plugin (?) (introductify??)
+  . Write docs
 
-  . Check compatibility of border-radius and box-shadow on older versions of
-    safari, opera, firefox and chrome. If there is problems, may need to
-    add '-moz-border-radius-bottomright' and '-webkit-border-top-left-radius'
-    to our getCss function
-
-  . Pimping awesomeness with 'animated effect': box-shadow growing bigger
+  . Write script file header
 
   . What if overlay shouldnt be whole page? 
 
   . resizeOverlay function is not good enough
 
-  . Treat elements with collapsed margin
-
-  . "Simulate" button shape when target is a button
+  . Check elements with collapsed margin
 
   . Test, test, test...
+
+  . Write unit tests
+
+  . Pimping awesomeness with 'animated effect': box-shadow growing bigger (?)
